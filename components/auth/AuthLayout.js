@@ -27,7 +27,11 @@ export default function AuthLayout({ children }) {
     Keyboard.dismiss();
   };
   return (
-    <TouchableWithoutFeedback style={{ flex: 1 }} onPress={dismissKeyboard}>
+    <TouchableWithoutFeedback
+      style={{ flex: 1 }}
+      onPress={dismissKeyboard}
+      disabled={Platform.OS === "web"}
+    >
       <Container>
         <KeyboardAvoidingView
           style={{
@@ -36,7 +40,6 @@ export default function AuthLayout({ children }) {
           }}
           behavior="position"
           keyboardVerticalOffset={Platform.OS === "ios" ? 30 : 0}
-          disabled={Platform.OS === "web"}
         >
           <Logo
             resizeMode="contain"
