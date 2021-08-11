@@ -1,10 +1,11 @@
 import { gql, useMutation } from "@apollo/client";
-import React, { useEffect, useRef } from "react";
-import AuthLayout from "../components/auth/AuthLayout";
-import AuthButton from "../components/auth/AuthButton";
-import { TextInput } from "../components/auth/AuthShared";
+import React, { useRef } from "react";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { isLoggedInVar, logUserIn } from "../apollo";
+import AuthButton from "../components/auth/AuthButton";
+import AuthLayout from "../components/auth/AuthLayout";
+import { TextInput } from "../components/auth/AuthShared";
 
 const LOGIN_MUTATION = gql`
   mutation login($username: String!, $password: String!) {

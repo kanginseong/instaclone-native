@@ -6,7 +6,7 @@ import { TextInput } from "../components/auth/AuthShared";
 import { useForm } from "react-hook-form";
 
 const CREATE_ACCOUNT_MUTATION = gql`
-  mutation createAccout(
+  mutation createAccount(
     $firstName: String!
     $lastName: String
     $username: String!
@@ -114,7 +114,7 @@ export default function CreateAccount({ navigation }) {
         lastOne={true}
         placeholderTextColor={"rgba(255, 255, 255, 0.8)"}
         onChangeText={(text) => setValue("password", text)}
-        onSubmitEditing={() => handleSubmit(onValid)}
+        onSubmitEditing={handleSubmit(onValid)}
       />
       <AuthButton
         text="Create Account"
