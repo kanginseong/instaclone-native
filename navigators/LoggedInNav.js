@@ -1,6 +1,6 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import StackNavFactory from "../components/nav/StackNavFactory";
+import StackNavFactory from "./SharedStackNav";
 import TabIcon from "../components/nav/TabIcon";
 import { View } from "react-native";
 
@@ -49,14 +49,14 @@ export default function LoggedInNav() {
         }}
       />
       <Tabs.Screen
-        name="Notifications"
+        name="Notification"
         options={{
           tabBarIcon: ({ focused, color, size }) => (
             <TabIcon iconName={"heart"} color={color} focused={focused} />
           ),
         }}
       >
-        {() => <StackNavFactory screenName="Notifications" />}
+        {() => <StackNavFactory screenName="Notification" />}
       </Tabs.Screen>
       <Tabs.Screen
         name="Me"

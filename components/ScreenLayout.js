@@ -1,7 +1,7 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { ActivityIndicator, View } from "react-native";
 
-export default function Notification() {
+export default function ScreenLayout({ loading, children }) {
   return (
     <View
       style={{
@@ -11,7 +11,7 @@ export default function Notification() {
         justifyContent: "center",
       }}
     >
-      <Text style={{ color: "white" }}>Notifications</Text>
+      {loading ? <ActivityIndicator color="white" /> : children}
     </View>
   );
 }
