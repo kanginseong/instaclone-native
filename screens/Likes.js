@@ -1,7 +1,8 @@
 import { gql, useQuery } from "@apollo/client";
 
 import React, { useState } from "react";
-import { FlatList } from "react-native";
+import { FlatList, View } from "react-native";
+
 import ScreenLayout from "../components/ScreenLayout";
 import UserRow from "../components/UserRow";
 import { USER_FRAGMENT } from "../fragments";
@@ -23,7 +24,6 @@ export default function Likes({ route }) {
     },
     skip: !route?.params?.photoId,
   });
-  console.log(data);
   const renderUser = ({ item: user }) => <UserRow {...user} />;
   const onRefresh = async () => {
     setRefreshing(true);
@@ -33,6 +33,15 @@ export default function Likes({ route }) {
   return (
     <ScreenLayout loading={loading}>
       <FlatList
+        ItemSeparatorComponent={() => (
+          <View
+            style={{
+              width: "100%",
+              height: 1,
+              backgroundColor: "rgba(255, 255, 255, 0.2)",
+            }}
+          ></View>
+        )}
         refreshing={refreshing}
         onRefresh={onRefresh}
         data={data?.seePhotoLikes}

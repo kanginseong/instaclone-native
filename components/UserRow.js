@@ -5,7 +5,6 @@ import { colors } from "../colors";
 const Column = styled.View`
   flex-direction: row;
   align-items: center;
-  padding: 5px 15px;
 `;
 const Avatar = styled.Image`
   width: 40px;
@@ -21,11 +20,13 @@ const Username = styled.Text`
 const Wrapper = styled.View`
   flex-direction: row;
   align-items: center;
-  padding: 5px 15px;
+  justify-content: space-between;
+  padding: 5px 10px;
 `;
 const FollowBtn = styled.TouchableOpacity`
   background-color: ${colors.blue};
-  padding: 15px 10px;
+  justify-content: center;
+  padding: 5px 10px;
   border-radius: 3px;
 `;
 const FollowBtnText = styled.Text`
@@ -41,7 +42,7 @@ export default function UserRow({ avatar, username, isFollowing, isMe }) {
         <Avatar source={{ uri: avatar }} />
         <Username>{username}</Username>
       </Column>
-      {isMe ? (
+      {!isMe ? (
         <FollowBtn>
           <FollowBtnText>{isFollowing ? "Unfollow" : "Follow"}</FollowBtnText>
         </FollowBtn>
