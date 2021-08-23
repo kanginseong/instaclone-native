@@ -77,7 +77,7 @@ export default function Search({ navigation }) {
   const renderItem = ({ item: photo }) => (
     <TouchableOpacity
       onPress={() =>
-        navigation.navigate("Photo", {
+        navigation.navigate("PhotoScreen", {
           photoId: photo.id,
         })
       }

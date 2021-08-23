@@ -4,7 +4,7 @@ import { logUserOut } from "../apollo";
 import { COMMENT_FRAGMENT, PHOTO_FRAGMENT } from "../fragments";
 import ScreenLayout from "../components/ScreenLayout";
 import { FlatList } from "react-native";
-import Photo from "../components/photo";
+import Photo from "../components/Photo";
 
 const FEED_QUERY = gql`
   query seeFeed($offset: Int!) {
