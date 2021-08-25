@@ -26,8 +26,8 @@ export const logUserOut = async () => {
 };
 
 const httpLink = createHttpLink({
-  uri: "https://brave-monkey-89.loca.lt/graphql",
-  // uri: "http//localhost:4000/graphql",
+  uri: "http://localhost:4000/graphql",
+  // uri: "http://localhost:4000/graphql",
 });
 
 const authLink = setContext((_, { headers }) => {
