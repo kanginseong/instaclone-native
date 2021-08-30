@@ -37,7 +37,7 @@ export default function Feed() {
     return <Photo {...photo} />;
   };
   const refresh = async () => {
-    refreshing(true);
+    setRefreshing(true);
     await refetch();
     setRefreshing(false);
   };

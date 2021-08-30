@@ -23,7 +23,7 @@ export default function UploadNav() {
         },
       }}
     >
-      <Tab.Screen name="Select">
+      <Tab.Screen name="SelectPhoto">
         {() => (
           <Stack.Navigator
             screenOptions={{
@@ -40,7 +40,7 @@ export default function UploadNav() {
             }}
           >
             <Stack.Screen
-              name="Select"
+              name="SelectStack"
               options={{ title: "Choose a Photo" }}
               component={SelectPhoto}
             />

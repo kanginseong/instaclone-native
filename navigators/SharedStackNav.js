@@ -12,7 +12,7 @@ import PhotoScreen from "../screens/PhotoScreen";
 
 const Stack = createStackNavigator();
 
-export default function StackNavFactory({ screenName }) {
+export default function SharedStackNav({ screenName }) {
   return (
     <Stack.Navigator
       options="screen"

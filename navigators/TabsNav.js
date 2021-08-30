@@ -1,6 +1,6 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import StackNavFactory from "./SharedStackNav";
+import SharedStackNav from "./SharedStackNav";
 import TabIcon from "../components/nav/TabIcon";
 import { Image, View } from "react-native";
 import useMe from "../hooks/useMe";
@@ -22,27 +22,27 @@ export default function TabsNav() {
       }}
     >
       <Tabs.Screen
-        name="Feed"
+        name="FeedTabs"
         options={{
           tabBarIcon: ({ focused, color, size }) => (
             <TabIcon iconName={"home"} color={color} focused={focused} />
           ),
         }}
       >
-        {() => <StackNavFactory screenName="Feed" />}
+        {() => <SharedStackNav screenName="Feed" />}
       </Tabs.Screen>
       <Tabs.Screen
-        name="Search"
+        name="SearchTabs"
         options={{
           tabBarIcon: ({ focused, color, size }) => (
             <TabIcon iconName={"search"} color={color} focused={focused} />
           ),
         }}
       >
-        {() => <StackNavFactory screenName="Search" />}
+        {() => <SharedStackNav screenName="Search" />}
       </Tabs.Screen>
       <Tabs.Screen
-        name="Camera"
+        name="CameraTabs"
         component={View}
         listeners={({ navigation }) => {
           return {
@@ -59,17 +59,17 @@ export default function TabsNav() {
         }}
       />
       <Tabs.Screen
-        name="Notification"
+        name="NotificatioTabs"
         options={{
           tabBarIcon: ({ focused, color, size }) => (
             <TabIcon iconName={"heart"} color={color} focused={focused} />
           ),
         }}
       >
-        {() => <StackNavFactory screenName="Notification" />}
+        {() => <SharedStackNav screenName="Notification" />}
       </Tabs.Screen>
       <Tabs.Screen
-        name="Me"
+        name="MeTabs"
         options={{
           tabBarIcon: ({ focused, color, size }) =>
             data?.me?.avatar ? (
@@ -87,7 +87,7 @@ export default function TabsNav() {
             ),
         }}
       >
-        {() => <StackNavFactory screenName="Me" />}
+        {() => <SharedStackNav screenName="Me" />}
       </Tabs.Screen>
     </Tabs.Navigator>
   );
